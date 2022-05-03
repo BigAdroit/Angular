@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
-
+// creating a service for the room 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomService {
 
   constructor() { }
-
+  // function that returns array of objects
   getRoom() {
     return [
       {

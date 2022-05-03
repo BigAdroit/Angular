@@ -1,3 +1,4 @@
+//  creating a check available class for form handling 
 export class CheckAvalabilty {
     constructor(
         public checkIn: string,

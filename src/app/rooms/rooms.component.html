@@ -28,7 +28,7 @@
 <div class="rooms-container" *ngIf="isDisplayRoom">
     <h2> Room & Suites</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quasi necessitatibus praesentium perferendis reiciendis voluptatibus omnis nobis quod voluptate. Aut.</p>
-
+    <!--  Using the ngFir to loop through the rooms in the array -->
     <div class="room-list">
         <div *ngFor ="let rm of rooms" class="margin-left">
             <img src="../../assets/imgs/{{rm.image}}" alt="" srcset="">
@@ -42,6 +42,7 @@
         </div>
     </div>
 </div>
+
 <!--   ===== Booking form is here =========== -->
 <div class="rooms-container" *ngIf="isDisplayForm">
     <h2> Book Room </h2>
@@ -49,6 +50,8 @@
 
     <div class="form-width">
         <div>
+            <!--  Using Template driven method to handle form in Angular -->
+            <!-- using thr ngForm and the ngModel to handle the form -->
             <form #bookForm ="ngForm">
                 
                 <!-- {{ bookForm.value | json}}
@@ -96,6 +99,7 @@
                         <input type="date" name="date" placeholder="Date" [(ngModel)]="bookingD.date">
                     </div>
                 </div>
+                <!--  Button and method to handle the submission process of the form -->
                 <button class="blue-bg btn-secondary" (click)="bookOn(bookForm.value)"> Book now</button>
             </form>
         </div>

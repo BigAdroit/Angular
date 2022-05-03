@@ -1,3 +1,4 @@
+//  creating a class on RoomBook to be used in the for, handling method 
 export class RoomBook {
     constructor (
         public room: string,

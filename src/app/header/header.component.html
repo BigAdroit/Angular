@@ -19,7 +19,7 @@
             <button class="btn-secondary blue-bg"> View Details </button>
             <button class="btn-secondary orange-bg"> Know more </button>
         </div>
-
+        <!--  checking for avalability and print out error if dste already exist in database -->
         <div class="check-in-con">
             <p class="errorMsg" *ngIf="isError">Date Already Pciked </p>
             <p class="successMsg" *ngIf="isSuccess">{{ message }}</p>

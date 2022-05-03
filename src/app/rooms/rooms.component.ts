@@ -19,6 +19,8 @@ export class RoomsComponent implements OnInit {
   rooms:any = []
   bookingD = new RoomBook(this.roomName, this.roomPrice, 0,"","","","","")
   public name: string = "Adroit"
+
+  //  creating an instance of the service, injecting the service 
   constructor(private roomservice: RoomService ) { }
 
 
@@ -39,8 +41,11 @@ export class RoomsComponent implements OnInit {
     this.bookingD = new RoomBook(this.roomName, this.roomPrice, 0,"","","","","")
 
   }
+  //  using localstorage to store data
   bookOn(details:any) {
     console.log(details)
+    
+    // checking if it already exist in the localstorage, if not creat new one 
     if(!(localStorage.getItem("roomBookings"))) {
       let arr = []
       arr.push(details)

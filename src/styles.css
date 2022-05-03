@@ -1,1 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.btn {
+    padding: 1rem 2rem ;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 4px gray;
+    color:white
+}
+.btn-secondary {
+    padding:1.5rem 2.2rem;
+    outline:none;
+    border:none;
+    color:white;
+    font-size:0.8rem;
+    margin-top:3rem;
+    margin-right:1rem;
+    text-align:center;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.btn-secondary:hover {
+    background-color: black;
+}
+.blue-bg {
+    background-color: rgb(117, 117, 223);
+}
+.orange-bg {
+    background-color: orange;
+}
+.center-con {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    margin-right:1.5rem;
+    padding:1rem 1.5rem;
+    background-color: inherit;
+    color:white;
+    margin-top:1rem;
+    width:160px;
+    outline:none;
+    border: 1px solid gray;
+}
+input[type=submit] {
+    padding:1rem 1.5rem;
+    outline:none;
+    border:none;
+    color:white;
+    font-size:0.8rem;
+    text-align:center;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase; 
+    background-color: rgb(117, 117, 223);
+    width:auto
+}
+.input {
+    background-color: white;
+    color:black;
+}
+
+.flex {
+    display:grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    margin:auto
+
+}
+.form-width { 
+
+}
+.form-width input {
+    background-color: black;
+    min-width:25rem;
+    margin-bottom: 1rem;
+}
+select {
+    margin-right:1.5rem;
+    padding:1rem 1.5rem;
+    background-color: black;
+    color:white;
+    margin-top:1rem;
+    width:150px;
+}

@@ -1,0 +1,117 @@
+<div class="header-nav">
+    <h4>Adroit Hotel</h4>
+    <nav>
+        <ul>
+            <li><a routerLink="/home" class="active">Home</a></li>
+            <li><a routerLink="/rooms"> Rooms </a></li>
+            <li><a routerLink="/dining">Dining & Bar</a></li>
+            <li><a routerLink="/service">Services</a></li>
+            <li><a routerLink="about">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+<!--  -======= Heaer section with the caurosel -->
+<section class="section-header">
+    <div class="header">
+        <p> Choose our Best </p>
+        <h4> Rooms & Suites</h4>
+        <div class="center-con">
+            <button class="btn-secondary blue-bg"> View Details </button>
+            <button class="btn-secondary orange-bg"> Know more </button>
+        </div>
+        
+    </div>
+
+</section>
+<!--  ============ Rooms Section ===================== -->
+<div class="rooms-container" *ngIf="isDisplayRoom">
+    <h2> Room & Suites</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quasi necessitatibus praesentium perferendis reiciendis voluptatibus omnis nobis quod voluptate. Aut.</p>
+
+    <div class="room-list">
+        <div *ngFor ="let rm of rooms" class="margin-left">
+            <img src="../../assets/imgs/{{rm.image}}" alt="" srcset="">
+            <div>
+                <h5>{{rm.room}}</h5>
+                <p class="price-margin"><span>$</span><span class="price">{{rm.price}}</span><span>/ per night</span></p>
+                <p>Pefect for traveling couples</p>
+                <p>Price does not include VAT and service fee</p>
+                <button class="btn-secondary blue-bg" (click)="bookRoom(rm)">Book</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--   ===== Booking form is here =========== -->
+<div class="rooms-container" *ngIf="isDisplayForm">
+    <h2> Book Room </h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quasi necessitatibus praesentium perferendis reiciendis voluptatibus omnis nobis quod voluptate. Aut.</p>
+
+    <div class="form-width">
+        <div>
+            <form #bookForm ="ngForm">
+                
+                <!-- {{ bookForm.value | json}}
+                {{ bookingD | json}} -->
+                <div class="flex">
+                    <div>
+                        <label for=""> Room </label><br>
+                        <input type="text" name="room" #room="ngModel"  [value]="roomName" [(ngModel)]="bookingD.room" >
+                    </div>
+                    <div>
+                        <label for=""> Price </label><br>
+                        <input type="text" name="price" [value]="roomPrice" [(ngModel)]="bookingD.price">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label for=""> Days </label><br>
+                        <input type="number" name="number" placeholder="Numbers of Days" [(ngModel)]="bookingD.days">
+                    </div>
+                    <div>
+                        <label for="">Fullname </label><br>
+                        <input type="text" name="name" placeholder="Fullname" [(ngModel)]="bookingD.name">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label for=""> Email </label><br>
+                        <input type="email" name="email" placeholder="email address" [(ngModel)]="bookingD.email">
+                    </div>
+                    <div>
+                        <label for=""> Phone </label><br>
+                        <input type="text" name="phone" placeholder="Phone Number" [(ngModel)]="bookingD.phone">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label for=""> Time </label><br>
+                        <input type="time" name="time" placeholder="Time" [(ngModel)]="bookingD.time">
+                    </div>
+                    <div>
+                        <label for=""> Date </label><br>
+                        <input type="date" name="date" placeholder="Date" [(ngModel)]="bookingD.date">
+                    </div>
+                </div>
+                <button class="blue-bg btn-secondary" (click)="bookOn(bookForm.value)"> Book now</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--  Newsletter form and footer section -->
+<div class="news-letter">
+    <div class="pos">
+        <div class="">
+            <h2> Sign up for Newsletter</h2>
+        <h4>Get A 50% discounts in every Romms</h4>
+        <input type="email" placeholder="Enter your mail" class="input">
+        <input type="submit" value="subscribe">
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

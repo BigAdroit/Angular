@@ -1,0 +1,216 @@
+.section-header {
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0, 0, 0.6), rgba(0,0,0,0.6)), url(../../assets/imgs/img_bg_1.jpg);
+    width:100%;
+    height:100vh;
+    padding: 5% 7%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    /* z-index: -2; */
+}
+.header-nav{
+    padding: 4% 10%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color:rgb(90, 82, 82);
+    height:15vh;
+    align-items: center;
+}
+.header-nav ul {
+    list-style-type: none;
+}
+.header-nav li {
+    display:inline-block;
+    margin-left: 1rem;
+    padding:0.5rem;
+}
+.header-nav li a {
+    text-decoration: none;
+    color:black;
+}
+.header-nav li a:active{
+    text-decoration: underline;
+}
+.header {
+    color:white;
+}
+.header p {
+    font-family: sans-serif;
+    font-size:1rem;
+    text-align:center;
+    margin:1rem
+}
+.header h4{
+    font-family: cursive;
+    font-size: 2rem;
+    text-align:center
+}
+.auto-margin {
+    margin:auto
+}
+.check-in-con {
+    width: 80%;
+    background-color:rgb(19, 18, 18);
+    padding:5%;
+    position:absolute;
+    left:50%;
+    transform:translate(-50%);
+    bottom:-8.5rem;
+    /* z-index: 2; */
+}
+.flex {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+input {
+    margin-right:1.5rem;
+    padding:1rem 1.5rem;
+    background-color: inherit;
+    color:white;
+    margin-top:1rem;
+    width:160px;
+    outline:none;
+    border: 1px solid rgb(85, 70, 70);
+}
+select {
+    margin-right:1.5rem;
+    padding:1rem 1.5rem;
+    background-color: black;
+    color:white;
+    margin-top:1rem;
+    width:150px;
+}
+input[type=submit] {
+    padding:1rem 1.5rem;
+    outline:none;
+    border:none;
+    color:white;
+    font-size:0.8rem;
+    text-align:center;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase; 
+    background-color: rgb(117, 117, 223);
+    width:auto
+}
+.cards-container {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top:13rem;
+    padding:5% 7%;
+    gap:3%;
+    text-align:center;
+}
+.cards-container h4{
+    margin-bottom: 1rem;
+    font-size:1.3rem;
+}
+.cards-container p {
+    font-size:1rem;
+}
+.rooms-container {
+    background-color: rgba(251, 249, 249, 0.958);
+    padding:5% 7%;
+}
+.rooms-container h2 {
+    text-align:center;
+    margin-bottom: 1rem;
+}
+.rooms-container p {
+    text-align:center;
+    width:70%;
+    margin:0.5rem auto;
+}
+.room-list {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    margin-top:5rem;
+    gap:3%;
+    text-align:center;
+}
+.room-list img {
+    width:100%;
+}
+.price {
+    font-size: 3rem;
+    font-weight:600;
+    color:rgb(120, 120, 209)
+}
+.room-list h5 {
+    margin:1rem;
+    font-size:1.3rem;
+}
+.price-margin {
+    margin: 3rem
+}
+.gap {
+    gap: 0;
+}
+.white-card {
+    background-color: white;
+    padding:10%;
+}
+.white-card h4 {
+    margin: 2rem;
+    font-size:1.2rem;
+}
+.white-card h6 {
+    margin-bottom: 2rem ;
+    font-size:0.9rem
+}
+.white-card p {
+    font-size:0.9rem;
+}
+.reveiw-img {
+    width:50%;
+    border-radius: 50%;
+}
+.news-letter {
+    background: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../../assets/imgs/img_bg_2.jpg);
+    padding: 10%;
+    background-position: center;
+    position:relative;
+}
+.pos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pos h2 {
+    color:white;
+    text-align: center;
+}
+.pos h4{
+    color:white;
+    text-align: center;
+}
+.input {
+    background-color: white;
+    color:black;
+}
+.text-danger {
+    color:red;
+}
+.d-none {
+    display:none;
+}
+.is-invalid {
+    border: 2px solid red;
+}
+.errorMsg {
+    color:red;
+    font-size:0.8rem;
+    text-align:center;
+}
+.successMsg {
+    color:green;
+    font-size:1.2rem;
+    text-align: center;
+}
+.margin-top{
+    margin-top: 2rem;
+}

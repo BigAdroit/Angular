@@ -1,0 +1,152 @@
+<app-menu></app-menu>
+
+<section class="main-div">
+    <div class="header">
+        <h4>Room</h4>
+        <div class="box">
+            <div>
+                <div class="circle">
+                    NA
+                </div>
+            </div>
+
+            <div> 
+                <h6>Akinremi Opeyemi</h6>
+                <p>Manager</p>
+            </div>
+            <div>
+                <div class="circle">
+                    <img src="../../assets/imgs/notification-icon.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="rooms-container">
+            <h2> Check in room </h2>
+            <h4>User Check in form</h4>
+        
+            <div class="form-width">
+                <div>
+                    <form #bookForm ="ngForm">
+                        
+                        {{ bookForm.value | json}}
+                        {{ bookingD | json}}
+                        <div class="flex">
+                            <div>
+                                <label for=""> Room </label><br>
+                                <select name="food" [(ngModel)]="bookingD.food">
+                                    <option value=""> Select room</option>
+                                    <option value="" *ngFor="let rm of room"> {{ rm.room }}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for=""> Check in Time </label><br>
+                                <input type="time" name="price" [(ngModel)]="bookingD.price">
+                            </div>
+                        </div>
+        
+                        <div class="flex">
+                            <div>
+                                <label for=""> Check in date </label><br>
+                                <input type="date" name="number" placeholder="Numbers of Days" [(ngModel)]="bookingD.roomNo">
+                            </div>
+                            <div>
+                                <label for="">Fullname </label><br>
+                                <input type="text" name="name" placeholder="Fullname" [(ngModel)]="bookingD.name">
+                            </div>
+                        </div>
+        
+                        <div class="flex">
+                            <div>
+                                <label for=""> Email </label><br>
+                                <input type="email" name="email" placeholder="email address" [(ngModel)]="bookingD.email">
+                            </div>
+                            <div>
+                                <label for=""> Phone </label><br>
+                                <input type="text" name="phone" placeholder="Phone Number" [(ngModel)]="bookingD.phone">
+                            </div>
+                        </div>
+        
+                        <div class="flex">
+                            <div>
+                                <label for=""> Time to Check out  </label><br>
+                                <input type="time" name="time" placeholder="Time" [(ngModel)]="bookingD.time">
+                            </div>
+                            <div>
+                                <label for=""> Date to Check out </label><br>
+                                <input type="date" name="date" placeholder="Date" [(ngModel)]="bookingD.date">
+                            </div>
+                        </div>
+                        <button class="blue-bg btn-secondary" (click)="onBook(bookForm.value)">Check in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <div class="cards">
+            <h5> Users to checkout Today </h5>
+            <div class="box">
+                <div>
+                    <div class="">
+                        <h1 class="green">50</h1>
+                    </div>
+                </div>
+                <div>
+                    <div class="">
+                        <img src="../../assets/imgs/Group 11850.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <button class="viewbtn"> View details</button>
+        </div>
+
+        <div class="cards">
+            <h5> All checkedIn Users </h5>
+            <div class="box">
+                <div>
+                    <div class="">
+                        <h1 class="green">50</h1>
+                    </div>
+                </div>
+                <div>
+                    <div class="">
+                        <img src="../../assets/imgs/Group 30799.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <button class="viewbtn"> View details</button>
+
+    </div>
+
+    <div class="calendar-analysis">
+        <div class="calendar">
+            <h4> Booked Rooms</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booking Date</th>
+                        <th> Name </th>
+                        <th>Email</th>
+                        <th>Room</th>
+                        <th>Phone</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of bRooms">
+                        <td>{{b.date}}</td>
+                        <td>{{b.name}}</td>
+                        <td>{{b.email}}</td>
+                        <td>{{b.room}}</td>
+                        <td>{{b.phone}}</td>
+                        <td>{{b.time}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,131 @@
+<app-menu></app-menu>
+<section class="main-div">
+    <div class="header">
+        <h4> Dashboard</h4>
+        <div class="box">
+            <div>
+                <div class="circle">
+                    NA
+                </div>
+            </div>
+
+            <div> 
+                <h6>Akinremi Opeyemi</h6>
+                <p>Manager</p>
+            </div>
+            <div>
+                <div class="circle">
+                    <img src="../../assets/imgs/notification-icon.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="cards">
+            <h5> Total Users</h5>
+            <div class="box">
+                <div>
+                    <div class="">
+                        <h1 class="green">50</h1>
+                    </div>
+                </div>
+                <div>
+                    <div class="">
+                        <img src="../../assets/imgs/Group 11841.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <button class="viewbtn"> View details</button>
+        </div>
+
+
+        <div class="cards">
+            <h5> Active Room </h5>
+            <div class="box">
+                <div>
+                    <div class="">
+                        <h1 class="green">50</h1>
+                    </div>
+                </div>
+                <div>
+                    <div class="">
+                        <img src="../../assets/imgs/Group 11850.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <button class="viewbtn"> View details</button>
+        </div>
+
+
+        <div class="cards">
+            <h5> Room Left </h5>
+            <div class="box">
+                <div>
+                    <div class="">
+                        <h1 class="green">50</h1>
+                    </div>
+                </div>
+                <div>
+                    <div class="">
+                        <img src="../../assets/imgs/Group 30799.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <button class="viewbtn"> View details</button>
+
+        </div>
+
+    </div>
+
+    <div class="calendar-analysis">
+        <div class="analysis">
+            <h4> Reserved Rooms </h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th> CheckIn date</th>
+                        <th> Checkout Date </th>
+                        <th> Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of aRooms">
+                        <td>{{b.checkIn}}</td>
+                        <td>{{b.checkOut}}</td>
+                        <td>{{b.firstName}}</td>
+                        <td>{{b.lastName}}</td>
+                        <td>{{b.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="calendar">
+            <h4> Booked Rooms</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booking Date</th>
+                        <th> Name </th>
+                        <th>Email</th>
+                        <th>Room</th>
+                        <th>Phone</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of bRooms">
+                        <td>{{b.date}}</td>
+                        <td>{{b.name}}</td>
+                        <td>{{b.email}}</td>
+                        <td>{{b.room}}</td>
+                        <td>{{b.phone}}</td>
+                        <td>{{b.time}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,219 @@
+<div class="header-nav">
+    <h4>Adroit Hotel</h4>
+    <nav>
+        <ul>
+            <li><a routerLink="/home" class="active">Home</a></li>
+            <li><a routerLink="/room"> Rooms </a></li>
+            <li><a routerLink="/dining">Dining & Bar</a></li>
+            <li><a routerLink="/service">Services</a></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+<section class="section-header">
+    <div class="header">
+        <p> Discover and Enjoy </p>
+        <h4> Everything you need in Adroit Hotel</h4>
+        <div class="center-con">
+            <button class="btn-secondary blue-bg"> View Details </button>
+            <button class="btn-secondary orange-bg"> Know more </button>
+        </div>
+
+        <div class="check-in-con">
+            <p class="errorMsg" *ngIf="isError">Date Already Pciked </p>
+            <p class="successMsg" *ngIf="isSuccess">{{ message }}</p>
+            <form #checkInForm ="ngForm" (ngSubmit)="onSubmit()" novalidate>
+                <!-- {{checkInForm.value | json}}
+                {{ Avalability | json}} -->
+                <div class="flex">
+                    <div>    
+                        <label for="Name"> Check in</label><br>
+                        <small class="text-danger" [class.d-none]="checkIn.valid || checkIn.untouched">Pick a checkin date </small>
+                        <input type="date" [disabled]="isDisable" #checkIn="ngModel" required [class.is-invalid]="checkIn.invalid && checkIn.touched" name="checkIn" ngModel id="checkIn" placeholder="check in date" [(ngModel)]="Avalability.checkIn">
+                    </div>
+                    
+                    <div>    
+                        <label for="Name"> Check out</label><br>
+                        <small class="text-danger" [class.d-none]="checkOut.valid || checkOut.untouched">Pick your chechout date</small>
+                        <input type="date" [disabled]="isDisable"  #checkOut="ngModel" required [class.is-invalid]="checkOut.invalid && checkOut.touched" name="checkOut" ngModel id="checkOut" placeholder="check in date" [(ngModel)]="Avalability.checkOut" >
+                    </div>
+                    
+                    <div>
+                        <label for="select"> Children</label><br>
+                        <!-- <lable class="error" id="childError" ></lable>  -->
+                        <select name="children" [disabled]="isDisable" id="children" ngModel [(ngModel)]="Avalability.children">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4 or more">4 or more </option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="select"> Adult</label><br>
+                        <select name="adult" [disabled]="isDisable" id="adult" ngModel [(ngModel)]="Avalability.adult">
+                            <option value="1"> 1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4 or more">4 or more </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="completReg flex margin-top" *ngIf="isSuccess">
+                    <div>
+                        <label for=""> Firstname</label><br>
+                        <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched"> Fistname is required</small><br>
+                        <input type="text" name ="fname"
+                            #firstName = "ngModel"
+                            [(ngModel)] = "Avalability.firstName"
+                            required
+                            [class.is-invalid]="firstName.invalid && firstName.touched"> 
+                    </div>
+                   
+                    <div>
+                        <label for="">Lastname</label><br>
+                        <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched"> Last name is required</small><br>
+                        <input type="text" name="lastname"
+                            #lastName = "ngModel"
+                            [(ngModel)] = "Avalability.lastName"
+                            required
+                            [class.is-invalid]="lastName.invalid && lastName.touched"
+                        >
+                    </div>
+
+                    <div>
+                        <label for=""> Email</label><br>
+                        <small class="text-danger" [class.d-none]="email.valid || email.untouched"> Last name is required</small><br>
+                        <input type="email" name="email"
+                            #email = "ngModel"
+                            [(ngModel)] = "Avalability.email"
+                            required
+                            [class.is-invalid]="email.invalid && email.touched">
+                    </div>
+                </div>
+                <button class="blue-bg btn" [disabled]="checkIn.invalid || checkOut.invalid" *ngIf="isSearch">Search</button>
+                <button type="submit" class="blue-bg btn" *ngIf="isSuccess" [disabled]="checkInForm.invalid" (click)="finalSubmission()">Book</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+<div class="cards-container">
+    <div>
+        <h4> 24/7  Front Desk</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolor molestiae impedit porro delectus enim expedita eos neque. Sed, minima?
+        </p>
+    </div>
+    <div>
+        <h4>Spa Suite</h4>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, illo eos doloremque facilis debitis, magni dolores voluptate in dolorum culpa, corporis cum ad saepe similique?
+    </div>
+    <div>
+        <h4>Transfer Service</h4>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sint soluta officia eos officiis inventore itaque? Unde necessitatibus fugit saepe sed omnis nesciunt aliquid doloribus.
+        </p>
+    </div>
+
+    <div>
+        <h4>Resturant & Bar</h4>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea saepe nihil soluta sequi voluptate quam vitae maxime quidem impedit inventore, numquam laboriosam perspiciatis error mollitia?
+        </p>
+    </div>
+</div>
+
+<div class="rooms-container">
+    <h2> Room & Suites</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quasi necessitatibus praesentium perferendis reiciendis voluptatibus omnis nobis quod voluptate. Aut.</p>
+
+    <div class="room-list">
+        <div *ngFor ="let rm of room">
+            <img src="../../assets/imgs/{{rm.image}}" alt="" srcset="">
+            <div>
+                <h5>{{rm.room}}</h5>
+                <p class="price-margin"><span>$</span><span class="price">{{rm.price}}</span><span>/ per night</span></p>
+                <p>Pefect for traveling couples</p>
+                <p>Price does not include VAT and service fee</p>
+                <button class="btn-secondary blue-bg">Book</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============ Dinig and Bar ======================= -->
+<div class="rooms-container">
+    <h2> Dining & Bar</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quasi necessitatibus praesentium perferendis reiciendis voluptatibus omnis nobis quod voluptate. Aut.</p>
+
+    <div class="room-list gap">
+        <div class="orange-bg">
+            
+        </div>
+        <div>
+            <img src="../../assets/imgs/cover_img_1.jpg" alt="" srcset="">
+        </div>
+    </div>
+</div>
+
+<!-- ==================== Recent Blog -------- -->
+<div class="rooms-container">
+    <h2> Recent Blogs </h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quasi necessitatibus praesentium perferendis reiciendis voluptatibus omnis nobis quod voluptate. Aut.</p>
+
+    <div class="room-list gap">
+        <div>
+            <img src="../../assets/imgs/blog-3.jpg" alt="" srcset="">
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</div>
+<!-- ===================== Revie of the customers ==================== -->
+<div class="rooms-container">
+    <h2> Our Satisfied Guest Says </h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quasi necessitatibus praesentium perferendis reiciendis voluptatibus omnis nobis quod voluptate. Aut.</p>
+
+    <div class="room-list">
+        <div class="white-card">
+            <div class="center-con reveiw-img auto-margin">
+                <img src="../../assets/imgs/person1.jpg" alt="" srcset="" class="reveiw-img">
+            </div>
+            <h4> Brain Mollisa</h4>
+            <h6> Satisfied Customer</h6>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, explicabo quibusdam ex ratione deserunt inventore iusto sunt fugiat iure porro!</p>
+        </div>
+
+        <div class="white-card">
+            <div class="center-con reveiw-img auto-margin">
+                <img src="../../assets/imgs/person3.jpg" alt="" srcset="" class="reveiw-img">
+            </div>
+            <h4> Sahara Jones</h4>
+            <h6> Satisfied Customer</h6>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, explicabo quibusdam ex ratione deserunt inventore iusto sunt fugiat iure porro!</p>
+        </div>
+
+        <div class="white-card">
+            <div class="center-con reveiw-img auto-margin">
+                <img src="../../assets/imgs/person2.jpg" alt="" srcset="" class="reveiw-img">
+            </div>
+            <h4> Ngolo Kante</h4>
+            <h6> Satisfied Customer</h6>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, explicabo quibusdam ex ratione deserunt inventore iusto sunt fugiat iure porro!</p>
+        </div>
+    </div>
+</div>
+
+<!-- =============== NewsLetter subscription ================== -->
+<div class="news-letter">
+    <div class="pos">
+        <div class="">
+            <h2> Sign up for Newsletter</h2>
+        <h4>Get A 50% discounts in every Romms</h4>
+        <input type="email" placeholder="Enter your mail" class="input">
+        <input type="submit" value="subscribe">
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
